@@ -3,6 +3,7 @@ var tasks = [{
     isDone: false
 }];
 
+// Referens till listan i HTML.
 var list;
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -11,9 +12,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
     showList();
 
-    var button = document.getElementById("createTask");
+    // Skapa uppgift
+    var createButton = document.getElementById("createTask");
     var inputTask = document.getElementById("inputTask");
-    button.addEventListener("click", () => {
+    createButton.addEventListener("click", () => {
         let newTask = {};
         newTask.name = inputTask.value;
         newTask.isDone = false;
@@ -22,7 +24,7 @@ document.addEventListener("DOMContentLoaded", () => {
         inputTask.value = "";
     })
 
-    // Känn av klick i "checkbox"
+    // Uppdatera uppgift
     list.addEventListener("click", (e) => {
         if (e.target.className == "box") {
             tasks[e.target.id].isDone = !tasks[e.target.id].isDone;
@@ -31,7 +33,7 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     })
 
-    // Ta bort klara uppgifter
+    // Ta bort färdiga uppgifter
     let deleteBtn = document.getElementById("delete");
     deleteBtn.addEventListener("click", () => {
         tasks.forEach((task, index) => {
@@ -45,7 +47,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 })
 
-
+// Rendera listan.
 function showList() {
 
     list.innerHTML = "";
@@ -54,19 +56,13 @@ function showList() {
         var item = document.createElement("LI");
         let ruta;
 
-        // // Vanlig if-sats
-        // if (task.isDone) {
-        //     ruta = "&#9745";
-        // } else {
-        //     ruta = "&#9744";
-        // }
-
         // Ternary operator
         ruta = task.isDone ? "&#9745" : "&#9744";
 
         item.innerHTML = `
         <div>${task.name}</div>
         <div class= "box" id = "${index}">${ruta}</div>`;
+
         list.appendChild(item);
     })
 
