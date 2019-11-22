@@ -1,0 +1,19 @@
+ul {
+    list-style-type: none;
+}
+
+li {
+    border: thin solid black;
+    padding: 1em;
+    margin: .3em;
+    display: flex;
+    font-size: 2em;
+}
+
+li div {
+    flex: 0 1 75%;
+}
+
+li div:last-child {
+    flex: 0 1 25%;
+}

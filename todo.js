@@ -31,7 +31,19 @@ function showList() {
 
     tasks.forEach(function (task, index) {
         var item = document.createElement("LI");
-        item.innerText = task.name;
+        let ruta;
+
+        // // Vanlig if-sats
+        // if (task.isDone) {
+        //     ruta = "&#9745";
+        // } else {
+        //     ruta = "&#9744";
+        // }
+
+        // Ternary operator
+        ruta = task.isDone ? "&#9745" : "&#9744";
+
+        item.innerHTML = "<div>" + task.name + "</div>" + "<div>" + ruta + "</div>";
         list.appendChild(item);
     })
 

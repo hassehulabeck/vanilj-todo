@@ -4,9 +4,13 @@ Skapa lista ***
 
 Visa lista (Läsa tasks) ***
 
-Skapa task 
+Skapa task ***
 
 Uppdatera task (bocka av att den är gjord)
+    Skapa css ***
+    Bocka i / klicka på knapp/länk ***
+    Känn av klick
+    Uppdatera
 
 Radera task
 
