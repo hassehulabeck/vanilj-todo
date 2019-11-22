@@ -22,6 +22,27 @@ document.addEventListener("DOMContentLoaded", () => {
         inputTask.value = "";
     })
 
+    // Känn av klick i "checkbox"
+    list.addEventListener("click", (e) => {
+        if (e.target.className == "box") {
+            tasks[e.target.id].isDone = !tasks[e.target.id].isDone;
+            console.log(tasks[e.target.id].isDone)
+            showList();
+        }
+    })
+
+    // Ta bort klara uppgifter
+    let deleteBtn = document.getElementById("delete");
+    deleteBtn.addEventListener("click", () => {
+        tasks.forEach((task, index) => {
+            if (task.isDone) {
+                tasks.splice(index, 1);
+            }
+        })
+        showList();
+    });
+
+
 })
 
 
@@ -43,7 +64,9 @@ function showList() {
         // Ternary operator
         ruta = task.isDone ? "&#9745" : "&#9744";
 
-        item.innerHTML = "<div>" + task.name + "</div>" + "<div>" + ruta + "</div>";
+        item.innerHTML = `
+        <div>${task.name}</div>
+        <div class= "box" id = "${index}">${ruta}</div>`;
         list.appendChild(item);
     })
 

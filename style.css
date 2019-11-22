@@ -17,3 +17,7 @@ li div {
 li div:last-child {
     flex: 0 1 25%;
 }
+
+li div:last-child:hover {
+    cursor: pointer;
+}

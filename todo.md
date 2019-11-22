@@ -9,10 +9,11 @@ Skapa task ***
 Uppdatera task (bocka av att den är gjord)
     Skapa css ***
     Bocka i / klicka på knapp/länk ***
-    Känn av klick
-    Uppdatera
+    Känn av klick ***
+    Uppdatera ***
 
 Radera task
+    Knapp radera alla isDone = true
 
 En task = data om uppgiften (namn) och om den är genomförd.
 { 
